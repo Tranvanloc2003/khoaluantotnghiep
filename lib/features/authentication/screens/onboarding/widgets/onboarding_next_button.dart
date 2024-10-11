@@ -18,10 +18,14 @@ class OnBoardingNextButton extends StatelessWidget {
     return Positioned(
       bottom: TDeviceUtils.getBottomNavigationBarHeight(),
       right: TSizes.defaultSpace,
-      child: ElevatedButton(onPressed: ()=> OnboardingController.instance.nextPage(),
-      style: ElevatedButton.styleFrom(
-        shape: const CircleBorder(), backgroundColor:dark?TColors.primary: Colors.black,
-      ), child:const Icon(Iconsax.arrow_right_3),
-       ),);
+      child: ElevatedButton(
+        onPressed: () => OnboardingController.instance.nextPage(),
+        style: ElevatedButton.styleFrom(
+          shape: const CircleBorder(),
+          backgroundColor: dark ? TColors.primary : Colors.black,
+        ),
+        child: const Icon(Iconsax.arrow_right_3),
+      ),
+    );
   }
 }

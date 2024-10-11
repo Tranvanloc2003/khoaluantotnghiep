@@ -15,29 +15,36 @@ class TSocialButtons extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.all(color:TColors.grey),borderRadius: BorderRadius.circular(100),
-            
+            border: Border.all(color: TColors.grey),
+            borderRadius: BorderRadius.circular(100),
           ),
-          child: IconButton(onPressed: (){},icon: const Image(
-            height: TSizes.iconMd,
-            width: TSizes.iconMd,
-            image: AssetImage(TImages.google),),
-          
+          child: IconButton(
+            onPressed: () {},
+            icon: const Image(
+              height: TSizes.iconMd,
+              width: TSizes.iconMd,
+              image: AssetImage(TImages.google),
+            ),
           ),
         ),
-        const SizedBox(width: TSizes.spaceBtwItems,),
-         Container(
+        const SizedBox(
+          width: TSizes.spaceBtwItems,
+        ),
+        Container(
           decoration: BoxDecoration(
-            border: Border.all(color:TColors.grey),borderRadius: BorderRadius.circular(100),
-            
+            border: Border.all(color: TColors.grey),
+            borderRadius: BorderRadius.circular(100),
           ),
-          child: IconButton(onPressed: (){},icon: const Image(
-            height: TSizes.iconMd,
-            width: TSizes.iconMd,
-            image: AssetImage(TImages.facebook),),
-          
+          child: IconButton(
+            onPressed: () {},
+            icon: const Image(
+              height: TSizes.iconMd,
+              width: TSizes.iconMd,
+              image: AssetImage(TImages.facebook),
+            ),
           ),
         ),
-    ],);
+      ],
+    );
   }
 }

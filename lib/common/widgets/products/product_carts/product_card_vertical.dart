@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/icons/circular_icon.dart';
@@ -6,6 +7,7 @@ import 'package:t_store/common/widgets/images/rounded_image.dart';
 import 'package:t_store/common/widgets/product.carts/product_price.dart';
 import 'package:t_store/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:t_store/common/widgets/texts/product_title_text.dart';
+import 'package:t_store/features/shop/screens/product_details/product_detail.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/shadow_styles.dart';
@@ -19,7 +21,7 @@ class TProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -89,42 +91,41 @@ class TProductCardVertical extends StatelessWidget {
                     height: TSizes.spaceBtwItems / 2,
                   ),
                   TBrandTitleWithVerifiedIcon(title: "Nike"),
-                  
                 ],
               ),
             ),
-           const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                     const Padding(
-                       padding: EdgeInsets.only(left: TSizes.sm),
-                       child: TProductPriceText(
-                          price: '35.5',
-                        ),
-                     ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: TColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(TSizes.productImageRadius),
-                            bottomRight: Radius.circular(
-                              TSizes.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: const SizedBox(
-                            height: TSizes.iconLg * 1.2,
-                            width: TSizes.iconLg * 1.2,
-                            child: Center(
-                              child: Icon(
-                                Iconsax.add,
-                                color: TColors.primary,
-                              ),
-                            )),
-                      ),
-                    ],
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: TProductPriceText(
+                    price: '35.5',
                   ),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(TSizes.productImageRadius),
+                      bottomRight: Radius.circular(
+                        TSizes.productImageRadius,
+                      ),
+                    ),
+                  ),
+                  child: const SizedBox(
+                      height: TSizes.iconLg * 1.2,
+                      width: TSizes.iconLg * 1.2,
+                      child: Center(
+                        child: Icon(
+                          Iconsax.add,
+                          color: TColors.primary,
+                        ),
+                      )),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -159,5 +160,3 @@ class TBrandTitleText extends StatelessWidget {
     );
   }
 }
-
-

@@ -41,12 +41,12 @@ class SignupForm extends StatelessWidget {
                   ),
                 ],
               ),
-    
+
               //username
               const SizedBox(
                 height: TSizes.spaceBtwInputFields,
               ),
-    
+
               TextFormField(
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.user_edit),
@@ -97,4 +97,3 @@ class SignupForm extends StatelessWidget {
     );
   }
 }
-

@@ -5,21 +5,26 @@ import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.title, required this.subtitle,  required this.onPressed, required this.image});
- final String title,subtitle, image;
- final VoidCallback onPressed;
+  const SuccessScreen(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.onPressed,
+      required this.image});
+  final String title, subtitle, image;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyles.paddingWithAppBarHeight * 2,
-          child: Column(children: [
-            //TImages.staticSuccessIllustration
-            //logo
+          child: Column(
+            children: [
+              //TImages.staticSuccessIllustration
+              //logo
               Image(
-                image:  AssetImage(image),
+                image: AssetImage(image),
                 width: THelperFunctions.screenWidth(context) * 0.6,
               ),
               const SizedBox(
@@ -35,7 +40,7 @@ class SuccessScreen extends StatelessWidget {
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-              
+
               //subtitle
               Text(
                 // TTexts.yourAccountCreatedSubTitle,
@@ -47,7 +52,7 @@ class SuccessScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               //button
-               //button verify
+              //button verify
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -59,9 +64,10 @@ class SuccessScreen extends StatelessWidget {
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-          ],),
+            ],
+          ),
         ),
-      ) ,
+      ),
     );
   }
 }

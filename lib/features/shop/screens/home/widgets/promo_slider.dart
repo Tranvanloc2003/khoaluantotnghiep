@@ -9,37 +9,44 @@ import 'package:t_store/utils/constants/sizes.dart';
 
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
-    super.key, required this.banners,
+    super.key,
+    required this.banners,
   });
-final List<String> banners ;
+  final List<String> banners;
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
     return Column(
-        children: [
-          CarouselSlider(items:banners.map((url) => TRoundedImage(imageUrl: url)).toList(), 
+      children: [
+        CarouselSlider(
+          items: banners.map((url) => TRoundedImage(imageUrl: url)).toList(),
           options: CarouselOptions(
             viewportFraction: 1,
-            onPageChanged: (index,_) => controller.updateCarouselIndex(index),
-          ),),
-          const SizedBox(
-            height: TSizes.spaceBtwItems,
+            onPageChanged: (index, _) => controller.updateCarouselIndex(index),
           ),
-          Center(
-            child: Obx(
-              () => Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (var i = 0; i < banners.length; i++)
-                  TCircularContainer(width: 20,height: 5,margin: const EdgeInsets.only(right: 10), backgroundColor: controller.carouselCurrentindex.value == i ? TColors.primary:TColors.grey,),
-                  
-                ],
-              ),
+        ),
+        const SizedBox(
+          height: TSizes.spaceBtwItems,
+        ),
+        Center(
+          child: Obx(
+            () => Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var i = 0; i < banners.length; i++)
+                  TCircularContainer(
+                    width: 20,
+                    height: 5,
+                    margin: const EdgeInsets.only(right: 10),
+                    backgroundColor: controller.carouselCurrentindex.value == i
+                        ? TColors.primary
+                        : TColors.grey,
+                  ),
+              ],
             ),
-          )
-        ],
-      );
-    
+          ),
+        )
+      ],
+    );
   }
 }
-

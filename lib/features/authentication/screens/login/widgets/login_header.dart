@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -19,8 +18,7 @@ class TLoginHeader extends StatelessWidget {
         //logo
         Image(
           height: 150,
-          image: AssetImage(
-              dark ? TImages.lightAppLogo : TImages.darkAppLogo),
+          image: AssetImage(dark ? TImages.lightAppLogo : TImages.darkAppLogo),
         ),
         //title
         Text(

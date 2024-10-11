@@ -38,13 +38,17 @@ class THelperFunctions {
     }
   }
 
-  static void showSnackBar({required BuildContext context, required String message}) {
+  static void showSnackBar(
+      {required BuildContext context, required String message}) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message)),
     );
   }
 
-  static void showAlert({required BuildContext context, required String title, required String message }) {
+  static void showAlert(
+      {required BuildContext context,
+      required String title,
+      required String message}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {

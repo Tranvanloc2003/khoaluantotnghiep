@@ -26,59 +26,39 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
         ),
         Expanded(
           child: Text.rich(
-            softWrap:
-                true, // Cho phép tự động xuống dòng khi quá dài
+            softWrap: true, // Cho phép tự động xuống dòng khi quá dài
             overflow: TextOverflow
                 .visible, // Cho phép hiển thị đầy đủ văn bản, không bị cắt bớt
             TextSpan(
               children: [
                 TextSpan(
                     text: "${TTexts.iAgreeTo} ",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall),
+                    style: Theme.of(context).textTheme.bodySmall),
                 TextSpan(
                   text: "${TTexts.privacyPolicy} ",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .apply(
-                          decoration:
-                              TextDecoration.underline,
-                          decorationColor:
-                              THelperFunctions.isDarkMode(
-                                      context)
-                                  ? TColors.white
-                                  : TColors.primary,
-                          color:
-                              THelperFunctions.isDarkMode(
-                                      context)
-                                  ? TColors.white
-                                  : TColors.primary),
+                  style: Theme.of(context).textTheme.bodyMedium!.apply(
+                      decoration: TextDecoration.underline,
+                      decorationColor: THelperFunctions.isDarkMode(context)
+                          ? TColors.white
+                          : TColors.primary,
+                      color: THelperFunctions.isDarkMode(context)
+                          ? TColors.white
+                          : TColors.primary),
                 ),
                 TextSpan(
                   text: "${TTexts.and} ",
-                  style:
-                      Theme.of(context).textTheme.bodySmall,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 TextSpan(
                   text: "${TTexts.termsOfUse} ",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .apply(
-                          decoration:
-                              TextDecoration.underline,
-                          decorationColor:
-                              THelperFunctions.isDarkMode(
-                                      context)
-                                  ? TColors.white
-                                  : TColors.primary,
-                          color:
-                              THelperFunctions.isDarkMode(
-                                      context)
-                                  ? TColors.white
-                                  : TColors.primary),
+                  style: Theme.of(context).textTheme.bodyMedium!.apply(
+                      decoration: TextDecoration.underline,
+                      decorationColor: THelperFunctions.isDarkMode(context)
+                          ? TColors.white
+                          : TColors.primary,
+                      color: THelperFunctions.isDarkMode(context)
+                          ? TColors.white
+                          : TColors.primary),
                 ),
               ],
             ),

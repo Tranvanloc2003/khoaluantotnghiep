@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/images/circular_image.dart';
@@ -14,9 +10,10 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
-    super.key, required this.showBorder,
+    super.key,
+    required this.showBorder,
   });
-final bool  showBorder;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +31,7 @@ final bool  showBorder;
                 image: TImages.beautyIcon,
                 isNetworkImage: false,
                 backgroundColor: Colors.transparent,
-                overlayColor: isDark
-                    ? TColors.white
-                    : TColors.black,
+                overlayColor: isDark ? TColors.white : TColors.black,
               ),
             ),
             const SizedBox(
@@ -46,8 +41,7 @@ final bool  showBorder;
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TBrandTitleWithVerifiedIcon(
                     title: 'Nike',
@@ -56,9 +50,7 @@ final bool  showBorder;
                   Text(
                     "256 sản phẩm",
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelMedium,
+                    style: Theme.of(context).textTheme.labelMedium,
                   ),
                 ],
               ),

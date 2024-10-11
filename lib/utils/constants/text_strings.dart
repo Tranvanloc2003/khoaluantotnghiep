@@ -51,7 +51,8 @@ class TTexts {
   static const String forgetPasswordTitle = "Quên mật khẩu";
   static const String forgetPasswordSubTitle =
       "Đừng lo lắng, đôi khi mọi người cũng có thể quên, nhập email của bạn và chúng tôi sẽ gửi cho bạn liên kết đặt lại mật khẩu.";
-  static const String changeYourPasswordTitle = "Email đặt lại mật khẩu đã được gửi";
+  static const String changeYourPasswordTitle =
+      "Email đặt lại mật khẩu đã được gửi";
   static const String changeYourPasswordSubTitle =
       "Bảo mật tài khoản của bạn là ưu tiên của chúng tôi! Chúng tôi đã gửi cho bạn một liên kết an toàn để thay đổi mật khẩu và giữ tài khoản của bạn được bảo vệ.";
   static const String confirmEmailTitle = "Xác minh địa chỉ email của bạn!";

@@ -119,9 +119,8 @@ class TImages {
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // -- Products
-  
-  static const String productImage1 =
-      "assets/images/products/airjordan.jpg";
+
+  static const String productImage1 = "assets/images/products/airjordan.jpg";
   static const String productImage2 =
       "assets/images/products/jordan1retrohighobsidian.jpg";
   static const String productImage5 =
@@ -136,7 +135,8 @@ class TImages {
       "assets/images/products/samsung_s9_mobile_back.png";
   //list of product images
   static const List<String> topProducts = [
-    productImage5,productImage13,
+    productImage5,
+    productImage13,
     productImage12
   ];
   static const List<String> productsImages = [

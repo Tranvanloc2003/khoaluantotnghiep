@@ -13,20 +13,26 @@ class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-      automaticallyImplyLeading: false,
-      actions: [
-      IconButton(onPressed: ()=> Get.back(),icon: const Icon(CupertinoIcons.clear),),
-    ],),
-    body: SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(children: [
-          //image and width 60% of screen
-           Image(image: const AssetImage(TImages.deliveredEmailIllustration),
-                 width: THelperFunctions.screenWidth(context) * 0.6,
-               ),
-          const SizedBox(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(CupertinoIcons.clear),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              //image and width 60% of screen
+              Image(
+                image: const AssetImage(TImages.deliveredEmailIllustration),
+                width: THelperFunctions.screenWidth(context) * 0.6,
+              ),
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               //title
@@ -39,7 +45,7 @@ class ResetPassword extends StatelessWidget {
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-              
+
               //subtitle
               Text(
                 // TTexts.yourAccountCreatedSubTitle,
@@ -51,29 +57,30 @@ class ResetPassword extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               //button
-               //button verify
+              //button verify
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: 
-                  () => Get.to( () => const LoginScreen(), ),
+                  onPressed: () => Get.to(
+                    () => const LoginScreen(),
+                  ),
                   child: const Text(TTexts.done),
                 ),
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-               SizedBox(
+              SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: 
-                  (){},
+                  onPressed: () {},
                   child: const Text(TTexts.resendEmail),
                 ),
               ),
-        ],),
+            ],
+          ),
+        ),
       ),
-    ),
     );
   }
 }

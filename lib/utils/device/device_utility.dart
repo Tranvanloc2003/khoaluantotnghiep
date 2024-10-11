@@ -43,7 +43,7 @@ class TDeviceUtils {
     return MediaQuery.of(context).devicePixelRatio;
   }
 
-  static double getStatusBarHeight( BuildContext context) {
+  static double getStatusBarHeight(BuildContext context) {
     return MediaQuery.of(context).padding.top;
   }
 
@@ -55,12 +55,12 @@ class TDeviceUtils {
     return kToolbarHeight;
   }
 
-  static double getKeyboardHeight( BuildContext context) {
+  static double getKeyboardHeight(BuildContext context) {
     final viewInsets = MediaQuery.of(context).viewInsets;
     return viewInsets.bottom;
   }
 
-  static Future<bool> isKeyboardVisible( BuildContext context) async {
+  static Future<bool> isKeyboardVisible(BuildContext context) async {
     final viewInsets = View.of(context).viewInsets;
     return viewInsets.bottom > 0;
   }

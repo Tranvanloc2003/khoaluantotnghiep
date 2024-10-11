@@ -11,16 +11,18 @@ class THomeCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120,
-                           
-      child: ListView.builder( 
+      child: ListView.builder(
         shrinkWrap: true,
         itemCount: 6,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
-          return  TVeticalImageText(image: TImages.mensShoesIcon, title: 'Shoes',onTap: (){},);
+          return TVeticalImageText(
+            image: TImages.mensShoesIcon,
+            title: 'Shoes',
+            onTap: () {},
+          );
         },
       ),
     );
   }
 }
-

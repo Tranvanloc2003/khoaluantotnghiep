@@ -13,7 +13,7 @@ class TCircularImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.padding = TSizes.sm, // Giá trị mặc định của padding
     this.isNetworkImage = false,
-     this.backgroundColor,
+    this.backgroundColor,
   });
 
   final BoxFit fit;
@@ -31,13 +31,17 @@ class TCircularImage extends StatelessWidget {
       padding: EdgeInsets.all(padding), // Sử dụng giá trị padding truyền vào
       decoration: BoxDecoration(
         color: backgroundColor ??
-            (THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white),
+            (THelperFunctions.isDarkMode(context)
+                ? TColors.black
+                : TColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
       child: Center(
         child: Image(
           fit: fit,
-          image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+          image: isNetworkImage
+              ? NetworkImage(image)
+              : AssetImage(image) as ImageProvider,
           color: overlayColor,
         ),
       ),

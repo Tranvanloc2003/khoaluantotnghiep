@@ -32,18 +32,21 @@ class SignupScreen extends StatelessWidget {
               ),
               //form
               const SignupForm(),
-               const SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               //button create
-              SizedBox(width: double.infinity,
-              child: ElevatedButton(
-                onPressed: ()=> Get.to(()=> const VerifyEmailScreen(),),
-                child: const Text(TTexts.createAccount),
-              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => Get.to(
+                    () => const VerifyEmailScreen(),
+                  ),
+                  child: const Text(TTexts.createAccount),
+                ),
               ),
               //divider
-               const SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               const TFormDivider(dividerText: TTexts.orSignUpWith),
@@ -59,4 +62,3 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
-
