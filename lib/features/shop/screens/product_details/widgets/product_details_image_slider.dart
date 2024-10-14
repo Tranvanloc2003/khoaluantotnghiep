@@ -21,11 +21,11 @@ class TProductImageSlider extends StatelessWidget {
         color: isDark ? TColors.darkerGrey : TColors.light,
         child: Stack(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 400,
               child: Padding(
                 padding:
-                    const EdgeInsets.all(TSizes.productImageRadius * 2),
+                    EdgeInsets.all(TSizes.productImageRadius * 2),
                 child: Center(
                   child: Image(
                     image: AssetImage(TImages.productImage1),
@@ -43,7 +43,7 @@ class TProductImageSlider extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   physics:  const AlwaysScrollableScrollPhysics(),
-                itemCount: 6, separatorBuilder: (_,__) => SizedBox(width: TSizes.spaceBtwItems,),itemBuilder: (_,index) =>TRoundedImage(imageUrl: TImages.productImage1,
+                itemCount: 6, separatorBuilder: (_,__) => const SizedBox(width: TSizes.spaceBtwItems,),itemBuilder: (_,index) =>TRoundedImage(imageUrl: TImages.productImage1,
                   backgroundColor: isDark ? TColors.light : TColors.darkerGrey,
                   border: Border.all(color: isDark ? TColors.darkerGrey : TColors.light),
                   padding: const EdgeInsets.all(1),

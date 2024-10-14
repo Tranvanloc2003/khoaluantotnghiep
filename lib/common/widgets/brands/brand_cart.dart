@@ -11,15 +11,15 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
     super.key,
-    required this.showBorder,
+    required this.showBorder, this.onTap,
   });
   final bool showBorder;
-
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: TRoundedContainer(
         padding: const EdgeInsets.all(TSizes.sm),
         showBorder: showBorder,

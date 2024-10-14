@@ -23,7 +23,7 @@ class TChoiceChip extends StatelessWidget {
         color: selected ? Colors.white : null,
         
       ),
-      avatar: TCircularContainer(height: 50,width: 50, backgroundColor: Colors.green,),
+      avatar: const TCircularContainer(height: 50,width: 50, backgroundColor: Colors.green,),
     ); // ChoiceChip
   }
 }

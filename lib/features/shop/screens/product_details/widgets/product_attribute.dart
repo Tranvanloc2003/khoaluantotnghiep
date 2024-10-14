@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/chips/choice_chip.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/common/widgets/product.carts/product_price.dart';
-import 'package:t_store/common/widgets/products/cart/bottom_add_to_card.dart';
 import 'package:t_store/common/widgets/texts/product_title_text.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/utils/constants/colors.dart';
@@ -27,7 +24,7 @@ class TProductAttribute extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  TSectionHeading(
+                  const TSectionHeading(
                     title: 'Variation',
                     showActionButton: false,
                   ),
@@ -39,7 +36,7 @@ class TProductAttribute extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          TProductTitleText(title: "Price : ", smallSize: true),
+                          const TProductTitleText(title: "Price : ", smallSize: true),
                           Text(
                             " \$250",
                             style:
@@ -50,7 +47,7 @@ class TProductAttribute extends StatelessWidget {
                           const SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
-                          TProductTitleText(
+                          const TProductTitleText(
                             title: "175",
                             smallSize: true,
                           ),
@@ -58,7 +55,7 @@ class TProductAttribute extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          TProductTitleText(title: "Stock : ", smallSize: true),
+                          const TProductTitleText(title: "Stock : ", smallSize: true),
                           Text("In Stock",
                               style: Theme.of(context).textTheme.titleMedium),
                         ],
@@ -67,7 +64,7 @@ class TProductAttribute extends StatelessWidget {
                   )
                 ],
               ),
-              TProductTitleText(
+              const TProductTitleText(
                 title:
                     "This Is The Description Of The Product And MaxLines Up To Max 4 Lines.",
                 maxLines: 4,
@@ -82,7 +79,7 @@ class TProductAttribute extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(
+            const TSectionHeading(
               showActionButton: false,
               title: "Colors",
             ),
@@ -122,7 +119,7 @@ class TProductAttribute extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TSectionHeading(
+            const TSectionHeading(
               showActionButton: false,
               title: "Sizes",
             ),
@@ -149,18 +146,18 @@ class TProductAttribute extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
-            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text('Checkout')),),
-            SizedBox(
+            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text('Checkout')),),
+            const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
-            TSectionHeading(title: 'Description', showActionButton: false),
+            const TSectionHeading(title: 'Description', showActionButton: false),
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
-            ReadMoreText('Trải nghiệm âm nhạc không giới hạn với Tai Nghe Không Dây XPro 300 – thiết kế thời thượng và chất âm hoàn hảo. Với công nghệ Bluetooth 5.2, bạn có thể dễ dàng kết nối nhanh chóng, ổn định và tiết kiệm năng lượng.',
+            const ReadMoreText('Trải nghiệm âm nhạc không giới hạn với Tai Nghe Không Dây XPro 300 – thiết kế thời thượng và chất âm hoàn hảo. Với công nghệ Bluetooth 5.2, bạn có thể dễ dàng kết nối nhanh chóng, ổn định và tiết kiệm năng lượng.',
             trimLines: 2,
             trimMode: TrimMode.Line,
             trimCollapsedText: 'Xem thêm',
@@ -168,7 +165,7 @@ class TProductAttribute extends StatelessWidget {
             moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
             lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
             ),
-             SizedBox(
+             const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
             

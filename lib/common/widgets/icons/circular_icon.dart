@@ -13,9 +13,11 @@ class TCircularIcon extends StatelessWidget {
     this.onPressed,
     this.color,
     this.backgroundColor,
+      // this.margin = 0,
   });
 
   final double? width, height, size;
+  // final double margin;
   final IconData icon;
   final Color? color;
   final Color? backgroundColor;
@@ -26,6 +28,7 @@ class TCircularIcon extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      // margin: EdgeInsets.only(left: margin, right: 0),
       decoration: BoxDecoration(
         color: backgroundColor != null
             ? backgroundColor!
