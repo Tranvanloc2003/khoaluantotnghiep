@@ -19,7 +19,7 @@ class THomeCategory extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
           return TVeticalImageText(
-            image: TImages.mensShoesIcon,
+            image: TImages.shoeIcon,
             title: 'Shoes',
             onTap: ()  => Get.to(() => const SubCategoriesScreen()),
           );

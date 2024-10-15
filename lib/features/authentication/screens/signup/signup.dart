@@ -8,6 +8,7 @@ import 'package:t_store/features/authentication/screens/signup/widgets/signup_fo
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 
+
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
 

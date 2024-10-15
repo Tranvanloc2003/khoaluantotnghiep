@@ -28,7 +28,7 @@ class TBrandCard extends StatelessWidget {
           children: [
             Flexible(
               child: TCircularImage(
-                image: TImages.beautyIcon,
+                image: TImages.shoeIcon,
                 isNetworkImage: false,
                 backgroundColor: Colors.transparent,
                 overlayColor: isDark ? TColors.white : TColors.black,

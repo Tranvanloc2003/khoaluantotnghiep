@@ -33,14 +33,14 @@ class VerifyEmailScreen extends StatelessWidget {
               //logo
               Image(
                 image: const AssetImage(TImages.deliveredEmailIllustration),
-                width: THelperFunctions.screenWidth(context) * 0.6,
+                width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               //title
               Text(
-                TTexts.confirmEmailTitle,
+                TTexts.confirmEmail,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),

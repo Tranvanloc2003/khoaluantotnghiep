@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class TSizes {
   // Padding and margin sizes
@@ -65,13 +64,10 @@ class TSizes {
 
   // Loading indicator size
   static const double loadingIndicatorSize = 36.0;
-// Padding With AppBarHeight
-  static const paddingWithAppBarHeight = EdgeInsets.only(
-      top: appBarHeight,
-      left: defaultSpace,
-      right: defaultSpace,
-      bottom: defaultSpace);
 
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
 }
+
+
+

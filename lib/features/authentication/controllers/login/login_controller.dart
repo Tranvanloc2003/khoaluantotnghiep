@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 
-class SignupController extends GetxController {
-  static SignupController get instance => Get.find();
+class LoginController extends GetxController {
+  static LoginController get instance => Get.find();
 
   /// Variables
 
   /// --- SIGNUP
-  Future<void> signup() async {
+  Future<void> login() async {
     try {
       // Start Loading
 

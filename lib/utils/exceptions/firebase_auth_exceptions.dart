@@ -1,12 +1,8 @@
-/// Custom exception class to handle various Firebase authentication-related errors.
 class TFirebaseAuthException implements Exception {
-  /// The error code associated with the exception.
   final String code;
 
-  /// Constructor that takes an error code.
   TFirebaseAuthException(this.code);
 
-  /// Get the corresponding error message based on the error code.
   String get message {
     switch (code) {
       case 'email-already-in-use':
@@ -49,8 +45,12 @@ class TFirebaseAuthException implements Exception {
         return 'The action code is missing. Please provide a valid action code.';
       case 'user-token-expired':
         return 'The user\'s token has expired, and authentication is required. Please sign in again.';
+      case 'user-not-found':
+        return 'No user found for the given email or UID.';
       case 'invalid-credential':
         return 'The supplied credential is malformed or has expired.';
+      case 'wrong-password':
+        return 'The password is invalid. Please check your password and try again.';
       case 'user-token-revoked':
         return 'The user\'s token has been revoked. Please sign in again.';
       case 'invalid-message-payload':

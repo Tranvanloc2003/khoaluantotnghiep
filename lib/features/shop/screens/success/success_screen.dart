@@ -19,7 +19,7 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Image
-              Image(image: AssetImage(image), width: THelperFunctions.screenWidth(context) * 0.6),
+              Image(image: AssetImage(image), width: THelperFunctions.screenWidth() * 0.6),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Title & SubTitle
