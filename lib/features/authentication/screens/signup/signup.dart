@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:t_store/common/widgets/login_signup/form_devider.dart';
 import 'package:t_store/common/widgets/login_signup/social_buttons.dart';
+import 'package:t_store/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:t_store/features/authentication/screens/signup/verify_email.dart';
 import 'package:t_store/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -12,6 +13,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
           // leading: IconButton(onPressed: (){},icon:Icon(Iconsax.) ,),
@@ -32,19 +34,6 @@ class SignupScreen extends StatelessWidget {
               ),
               //form
               const SignupForm(),
-              const SizedBox(
-                height: TSizes.spaceBtwItems,
-              ),
-              //button create
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.to(
-                    () => const VerifyEmailScreen(),
-                  ),
-                  child: const Text(TTexts.createAccount),
-                ),
-              ),
               //divider
               const SizedBox(
                 height: TSizes.spaceBtwItems,

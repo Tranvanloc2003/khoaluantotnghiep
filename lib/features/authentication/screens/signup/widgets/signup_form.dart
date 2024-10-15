@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:t_store/features/authentication/screens/signup/widgets/term_condition_checkboxs.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
+import 'package:t_store/utils/validators/validation.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({
@@ -11,7 +14,9 @@ class SignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormkey,
       child: Column(
         children: [
           Column(
@@ -20,6 +25,8 @@ class SignupForm extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      controller: controller.firstname,// gans bien cho input
+                      validator: (value) => TValidator.validateEmptyText('First name', value),// get phuong thuc thong bao loi
                       expands: false,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Iconsax.user),
@@ -32,6 +39,8 @@ class SignupForm extends StatelessWidget {
                   ),
                   Expanded(
                     child: TextFormField(
+                      controller: controller.lastName,
+                      validator: (value) => TValidator.validateEmptyText('Last name', value),// get phuong thuc thong bao loi
                       expands: false,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Iconsax.user),
@@ -48,6 +57,8 @@ class SignupForm extends StatelessWidget {
               ),
 
               TextFormField(
+                controller: controller.username,
+                validator: (value) => TValidator.validateEmptyText('Username', value),// get phuong thuc thong bao loi
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.user_edit),
                     labelText: TTexts.username),
@@ -57,6 +68,8 @@ class SignupForm extends StatelessWidget {
               ),
               //email
               TextFormField(
+                controller: controller.email,
+                validator: (value) => TValidator.validateEmail(value),// get phuong thuc thong bao loi
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.direct_right),
                     labelText: TTexts.email),
@@ -66,6 +79,8 @@ class SignupForm extends StatelessWidget {
               ),
               //phone number
               TextFormField(
+                controller: controller.phoneNumber,
+                validator: (value) => TValidator.validatePhoneNumber(value),// get phuong thuc thong bao loi
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Iconsax.call,
@@ -78,6 +93,8 @@ class SignupForm extends StatelessWidget {
               ),
               //password
               TextFormField(
+                controller: controller.password,
+                validator: (value) => TValidator.validatePassword(value),// get phuong thuc thong bao loi
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Iconsax.password_check,
@@ -90,8 +107,22 @@ class SignupForm extends StatelessWidget {
                 height: TSizes.spaceBtwInputFields,
               ),
               const TTermsAndConditionCheckbox(),
+               const SizedBox(
+                height: TSizes.spaceBtwItems,
+              ),
+              //button create
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  // onPressed: () => Get.to(
+                  //   () => const VerifyEmailScreen(),
+                  // ),
+                  onPressed: controller.signup,
+                  child: const Text(TTexts.createAccount),
+                ),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
