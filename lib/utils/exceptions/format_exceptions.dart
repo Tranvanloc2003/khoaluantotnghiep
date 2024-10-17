@@ -1,6 +1,6 @@
 class TFormatException implements Exception {
   final String message;
-  const TFormatException([this.message = 'An unexpected format error occurred. Please check your input.']);
+  const TFormatException([this.message = 'Đã xảy ra lỗi định dạng không mong muốn. Vui lòng kiểm tra lại thông tin nhập.']);
 
   factory TFormatException.fromMessage(String message) {
     return TFormatException(message);
@@ -11,17 +11,17 @@ class TFormatException implements Exception {
   factory TFormatException.fromCode(String code) {
     switch (code) {
       case 'invalid-email-format':
-        return const TFormatException('The email address format is invalid. Please enter a valid email.');
+        return const TFormatException('Định dạng địa chỉ email không hợp lệ. Vui lòng nhập địa chỉ email hợp lệ.');
       case 'invalid-phone-number-format':
-        return const TFormatException('The provided phone number format is invalid. Please enter a valid number.');
+        return const TFormatException('Định dạng số điện thoại không hợp lệ. Vui lòng nhập số điện thoại hợp lệ.');
       case 'invalid-date-format':
-        return const TFormatException('The date format is invalid. Please enter a valid date.');
+        return const TFormatException('Định dạng ngày tháng không hợp lệ. Vui lòng nhập ngày tháng hợp lệ.');
       case 'invalid-url-format':
-        return const TFormatException('The URL format is invalid. Please enter a valid URL.');
+        return const TFormatException('Định dạng URL không hợp lệ. Vui lòng nhập URL hợp lệ.');
       case 'invalid-credit-card-format':
-        return const TFormatException('The credit card format is invalid. Please enter a valid credit card number.');
+        return const TFormatException('Định dạng thẻ tín dụng không hợp lệ. Vui lòng nhập số thẻ tín dụng hợp lệ.');
       case 'invalid-numeric-format':
-        return const TFormatException('The input should be a valid numeric format.');
+        return const TFormatException('Đầu vào phải có định dạng số hợp lệ.');
       default:
         return const TFormatException();
     }

@@ -44,7 +44,6 @@ dependencies:
   carousel_slider: ^5.0.0
   image_picker: ^1.0.8
 
-
   cupertino_icons: ^1.0.2
   iconsax: ^0.0.8
   readmore: ^2.2.0
@@ -61,9 +60,8 @@ dependencies:
   firebase_auth: ^4.20.0
   cloud_firestore: ^4.13.1
   firebase_storage: ^11.6.9
-
-
   google_sign_in: ^6.2.1
+  
   shimmer: ^3.0.0
   cached_network_image: ^3.3.1
 dev_dependencies:

@@ -1,51 +1,52 @@
 class TExceptions implements Exception {
   final String message;
 
-  const TExceptions([this.message = 'An unexpected error occurred. Please try again.']);
+  const TExceptions([this.message = 'Đã xảy ra lỗi không mong muốn. Vui lòng thử lại.']);
 
-  factory TExceptions.fromCode(String code){
-      switch (code) {
-        case 'email-already-in-use':
-          return const TExceptions('The email address is already registered. Please use a different email.');
-        case 'invalid-email':
-          return const TExceptions('The email address provided is invalid. Please enter a valid email.');
-        case 'weak-password':
-          return const TExceptions('The password is too weak. Please choose a stronger password.');
-        case 'user-disabled':
-          return const TExceptions('This user account has been disabled. Please contact support for assistance.');
-        case 'user-not-found':
-          return const TExceptions('Invalid login details. User not found.');
-        case 'wrong-password':
-          return const TExceptions('Incorrect password. Please check your password and try again.');
-        case 'INVALID_LOGIN_CREDENTIALS':
-          return const TExceptions('Invalid login credentials. Please double-check your information.');
-        case 'too-many-requests':
-          return const TExceptions('Too many requests. Please try again later.');
-        case 'invalid-argument':
-          return const TExceptions('Invalid argument provided to the authentication method.');
-        case 'invalid-password':
-          return const TExceptions('Incorrect password. Please try again.');
-        case 'invalid-phone-number':
-          return const TExceptions('The provided phone number is invalid.');
-        case 'operation-not-allowed':
-          return const TExceptions('The sign-in provider is disabled for your Firebase project.');
-        case 'session-cookie-expired':
-          return const TExceptions('The Firebase session cookie has expired. Please sign in again.');
-        case 'uid-already-exists':
-          return const TExceptions('The provided user ID is already in use by another user.');
-        case 'sign_in_failed':
-          return const TExceptions('Sign-in failed. Please try again.');
-        case 'network-request-failed':
-          return const TExceptions('Network request failed. Please check your internet connection.');
-        case 'internal-error':
-          return const TExceptions('Internal error. Please try again later.');
-        case 'invalid-verification-code':
-          return const TExceptions('Invalid verification code. Please enter a valid code.');
-        case 'invalid-verification-id':
-          return const TExceptions('Invalid verification ID. Please request a new verification code.');
-        case 'quota-exceeded':
-          return const TExceptions('Quota exceeded. Please try again later.');
-        default:
-          return const TExceptions();}
+  factory TExceptions.fromCode(String code) {
+    switch (code) {
+      case 'email-already-in-use':
+        return const TExceptions('Địa chỉ email đã được đăng ký. Vui lòng sử dụng email khác.');
+      case 'invalid-email':
+        return const TExceptions('Địa chỉ email không hợp lệ. Vui lòng nhập email hợp lệ.');
+      case 'weak-password':
+        return const TExceptions('Mật khẩu quá yếu. Vui lòng chọn mật khẩu mạnh hơn.');
+      case 'user-disabled':
+        return const TExceptions('Tài khoản này đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ để được trợ giúp.');
+      case 'user-not-found':
+        return const TExceptions('Thông tin đăng nhập không hợp lệ. Không tìm thấy người dùng.');
+      case 'wrong-password':
+        return const TExceptions('Mật khẩu không chính xác. Vui lòng kiểm tra lại mật khẩu và thử lại.');
+      case 'INVALID_LOGIN_CREDENTIALS':
+        return const TExceptions('Thông tin đăng nhập không hợp lệ. Vui lòng kiểm tra lại thông tin của bạn.');
+      case 'too-many-requests':
+        return const TExceptions('Quá nhiều yêu cầu. Vui lòng thử lại sau.');
+      case 'invalid-argument':
+        return const TExceptions('Tham số không hợp lệ cho phương thức xác thực.');
+      case 'invalid-password':
+        return const TExceptions('Mật khẩu không hợp lệ. Vui lòng thử lại.');
+      case 'invalid-phone-number':
+        return const TExceptions('Số điện thoại cung cấp không hợp lệ.');
+      case 'operation-not-allowed':
+        return const TExceptions('Nhà cung cấp đăng nhập đã bị vô hiệu hóa cho dự án Firebase của bạn.');
+      case 'session-cookie-expired':
+        return const TExceptions('Cookie phiên của Firebase đã hết hạn. Vui lòng đăng nhập lại.');
+      case 'uid-already-exists':
+        return const TExceptions('ID người dùng đã được sử dụng bởi người dùng khác.');
+      case 'sign_in_failed':
+        return const TExceptions('Đăng nhập thất bại. Vui lòng thử lại.');
+      case 'network-request-failed':
+        return const TExceptions('Yêu cầu mạng không thành công. Vui lòng kiểm tra kết nối internet.');
+      case 'internal-error':
+        return const TExceptions('Lỗi nội bộ. Vui lòng thử lại sau.');
+      case 'invalid-verification-code':
+        return const TExceptions('Mã xác minh không hợp lệ. Vui lòng nhập mã hợp lệ.');
+      case 'invalid-verification-id':
+        return const TExceptions('ID xác minh không hợp lệ. Vui lòng yêu cầu mã xác minh mới.');
+      case 'quota-exceeded':
+        return const TExceptions('Đã vượt quá hạn mức. Vui lòng thử lại sau.');
+      default:
+        return const TExceptions();
+    }
   }
 }

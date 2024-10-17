@@ -6,13 +6,14 @@ import 'package:t_store/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:t_store/common/widgets/list_title/menu_setting_title.dart';
 import 'package:t_store/common/widgets/list_title/user_profile_title.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/features/personalization/address/address.dart';
-import 'package:t_store/features/personalization/profile/profile.dart';
+import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:t_store/features/personalization/screens/address/address.dart';
+import 'package:t_store/features/personalization/screens/profile/profile.dart';
 import 'package:t_store/features/shop/screens/carts/cart.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
-import '../../shop/screens/orders/order.dart';
+import '../../../shop/screens/orders/order.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -102,14 +103,51 @@ class SettingScreen extends StatelessWidget {
                       subTitle: 'Manage data usage and connected accounts'),
 
                   /// -- App Settings
-                  const SizedBox(height: TSizes.spaceBtwSections),
-                  const TSectionHeading(
-                      title: 'App Settings', showActionButton: false),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  const TSettingsMenuTile(
+                 SizedBox(height: TSizes.spaceBtwSections),
+                  TSectionHeading(
+                      title: "App Settings", showActionButton: false),
+                  SizedBox(height: TSizes.spaceBtwItems),
+                  TSettingsMenuTile(
                       icon: Iconsax.document_upload,
-                      title: 'Load Data',
-                      subTitle: 'Upload Data to your Cloud Firebase'),
+                      title: "Load Data",
+                      subTitle: "Upload data to your cloud firebase",
+                      onTap: () {}),
+                  TSettingsMenuTile(
+                    icon: Iconsax.location,
+                    title: "Geolocation",
+                    subTitle: "Set recommendation based on location",
+                    trailing: Switch(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  TSettingsMenuTile(
+                    icon: Iconsax.security_user,
+                    title: "Safe Mode",
+                    subTitle: "Search result is safe for all ages",
+                    trailing: Switch(
+                      value: false,
+                      onChanged: (value) {},
+                    ),
+                  ),
+                  TSettingsMenuTile(
+                    icon: Iconsax.image,
+                    title: "HD Image Quality",
+                    subTitle: "Set image quality to be seen",
+                    trailing: Switch(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                  ),
+
+                  /// - Logout
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                        onPressed: () => AuthenticationRepository.instance.logout(), child: const Text('Logout')),
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections * 2.5)
                 ],
               ),
             ),

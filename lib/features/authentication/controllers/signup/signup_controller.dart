@@ -56,7 +56,7 @@ class SignupController extends GetxController {
 TLoaders.successSnackBar(title: 'Đăng ký thành công', message: 'Chúc mừng bạn đã đăng ký tài khoản thành công. Vui lòng kiểm tra email của bạn để xác minh tài khoản.');
       // Move to Verify Email Screen
         // TFullScreenLoader.stopLoading();
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() =>  VerifyEmailScreen(email: email.text.trim(),));
     } catch (e) {
        // Remove Loader
       TFullScreenLoader.stopLoading();
