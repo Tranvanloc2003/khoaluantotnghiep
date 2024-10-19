@@ -6,6 +6,7 @@ import 'package:t_store/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/common/widgets/product.carts/cart_menu_icon.dart';
 import 'package:t_store/common/widgets/brands/brand_cart.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/shop/controller/category_controller.dart';
 import 'package:t_store/features/shop/screens/all_brands/all_brands.dart';
 import 'package:t_store/features/shop/screens/store/widget/category_tab.dart';
 import 'package:t_store/utils/constants/colors.dart';
@@ -18,8 +19,9 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -81,37 +83,19 @@ class StoreScreen extends StatelessWidget {
                   ),
                 ),
                 //tab - tutorial
-                bottom: const TTabBar(
-                  tabs: [
-                    Tab(
-                      child: Text('Thể thao'),
-                    ),
-                    Tab(
-                      child: Text('Nội thất'),
-                    ),
-                    Tab(
-                      child: Text('Điện tử'),
-                    ),
-                    Tab(
-                      child: Text('Quần áo'),
-                    ),
-                    Tab(
-                      child: Text('Mỹ phẩm'),
-                    ),
-                  ],
+                bottom: TTabBar(
+                  tabs: categories
+                      .map((category) => Tab(
+                            child: Text(category.name),
+                          ))
+                      .toList(),
                 ),
               ),
             ];
           },
 
           //body
-          body: const TabBarView(children: [
-            CategoryTab(),
-            CategoryTab(),
-            CategoryTab(),
-            CategoryTab(),
-            CategoryTab(),
-          ]),
+          body:  TabBarView(children: categories.map((category)=> CategoryTab(category: category,)).toList()),
         ),
       ),
     );

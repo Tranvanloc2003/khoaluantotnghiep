@@ -1,7 +1,7 @@
 class TFirebaseException implements Exception {
   final String code;
 
-  TFirebaseException(this.code);
+    TFirebaseException(this.code);
 
   String get message {
     switch (code) {

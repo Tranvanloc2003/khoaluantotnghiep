@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:t_store/common/widgets/image_text_widget/vertical_image_text.dart';
+import 'package:t_store/common/widgets/shimmer/category_shimmer.dart';
+import 'package:t_store/features/shop/controller/category_controller.dart';
 import 'package:t_store/features/shop/screens/sub_category/sub_categories.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
 
-class THomeCategory extends StatelessWidget {
-  const THomeCategory({
+class THomeCategories extends StatelessWidget {
+  const THomeCategories({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: 6,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
-          return TVeticalImageText(
-            image: TImages.shoeIcon,
-            title: 'Shoes',
-            onTap: ()  => Get.to(() => const SubCategoriesScreen()),
-          );
-        },
-      ),
-    );
+    final categoryController = Get.put(CategoryController());
+
+    return Obx(() {
+      if (categoryController.isLoading.value) {
+        return const TCategoryShimmer();
+      }
+
+      if (categoryController.featuredCategories.isEmpty) {
+        return Center(
+          child: Text(
+            'No Data Found!',
+            style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),
+          ),
+        );
+      }
+
+      return SizedBox(
+        height: 120,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: categoryController.featuredCategories.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, index) {
+            final category = categoryController.featuredCategories[index];
+            return TVeticalImageText(
+              image: category.image,
+              title: category.name,
+              onTap: () => Get.to(() => const SubCategoriesScreen()),
+            );
+          },
+        ),
+      );
+    });
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/common/widgets/appbar/appbar.dart';
 import 'package:t_store/common/widgets/images/circular_image.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
+import 'package:t_store/data/repositories/user/user_repository.dart';
+import 'package:t_store/features/personalization/controllers/user_controller.dart';
+import 'package:t_store/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:t_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -12,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       //appbar
       appBar: const TAppBar(
@@ -28,13 +33,19 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const TCircularImage(
-                      image: TImages.user,
-                      width: 80,
-                      height: 80,
-                    ),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image =
+                          networkImage.isNotEmpty ? networkImage : TImages.user;
+                      return TCircularImage(
+                        image: image,
+                        width: 80,
+                        height: 80,
+                        isNetworkImage: networkImage.isNotEmpty,
+                      );
+                    }),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.uploadUserProfilePicture(),
                       child: const Text('Change Profile Picture'),
                     ),
                   ],
@@ -56,15 +67,15 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: 'Name',
-                value: 'TranVanLoc',
-                onPressed: () {},
+                value: controller.user.value.fullName,
+                onPressed: () => Get.to(() => const ChangeNameWidget()),
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               ProfileMenu(
                 title: 'Username',
-                value: 'vanloc',
+                value: controller.user.value.username,
                 onPressed: () {},
               ),
               const SizedBox(
@@ -83,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: 'User Id',
-                value: '123',
+                value: controller.user.value.id,
                 onPressed: () {},
                 icon: Iconsax.copy,
               ),
@@ -92,7 +103,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: 'Email',
-                value: 'namlun12333@gmail.com',
+                value: controller.user.value.email,
                 onPressed: () {},
               ),
               const SizedBox(
@@ -100,7 +111,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: 'Phone',
-                value: '0123456789',
+                value: controller.user.value.phoneNumber,
                 onPressed: () {},
               ),
               const SizedBox(
@@ -116,20 +127,23 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: 'Date of Birth',
-                value: '03/04/2003',
+                value: '12/12/1999',
                 onPressed: () {},
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               const Divider(),
-               const SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               Center(
                 child: TextButton(
-                  onPressed: () {},
-                  child: const Text('Close Account',style: TextStyle(color: Colors.red),),
+                  onPressed: () => controller.deleteAccountWarningPopup(),
+                  child: const Text(
+                    'Close Account',
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ),
               ),
             ],
